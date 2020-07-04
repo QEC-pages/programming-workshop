@@ -79,14 +79,16 @@ git config --global user.email "Some@email.com"
 
   - [GitHub](https://github.com/QEC-pages) We will create several repos in the QEC-pages to demonstrate how to collaborate through branches and pull requests.
     - issue, pull request, [ssh key](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh), [release](https://help.github.com/en/enterprise/2.13/user/articles/creating-releases)
-	- Edit GitHub repo locally
-```
+    - Edit GitHub repo locally
+
+```shell
 git clone ...
 git push
 ```
-	- Move your local repo to GitHub
-	  - This happen when the code or repo is already on your local machine
-	  - Create an empty repo on Github and then you will see the instruction there.
+
+    - Move your local repo to GitHub
+      - This happen when the code or repo is already on your local machine
+      - Create an empty repo on Github and then you will see the instruction there.
 	  
 
 - oh-my-zsh
