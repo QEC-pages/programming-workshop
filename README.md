@@ -101,7 +101,7 @@ git push
 - Homework
   - Send a pull request to this repo [programming workshop](https://github.com/QEC-pages/programming-workshop), where you don't have write access. (e.g. fix some typo, add a link to a resource page, or improving the text format.) You should fork this repo to your own account, make changes and commit, then send the pull request.
   - Make some commit and create a new branch in this repo [min weight decoder](https://github.com/QEC-pages/min-weight-decoder), where you should have been granted write access.
-  - Optional: write a min weight decoder for the Hamming code, classical [7,4,3] first, and then quantum [[7,1,3]]. references: [wiki](https://en.wikipedia.org/wiki/Linear_code), [pdf](https://www.cs.toronto.edu/~radford/csc310.F11/week11.pdf)
+  - Optional: write a min weight decoder for the Hamming code, classical [7,4,3] first, and then quantum [[7,1,3]]. references: [wiki](https://en.wikipedia.org/wiki/Linear_code), [pdf](https://www.cs.toronto.edu/~radford/csc310.F11/week11.pdf), [linear code](https://people.cs.umass.edu/~arya/courses/690T/lecture3.pdf)
 
 
 
@@ -111,7 +111,10 @@ git push
   - [pdf](https://www.cs.toronto.edu/~radford/csc310.F11/week11.pdf)
 - Random Window decoder
   - build a C++ project with random window decoder
-
+- Sample code
+  - https://qec-pages.github.io/product-codes/html/test__lib_8cpp_source.html
+  
+  
   
 ### Session 5: Some fancy trick (optional)
 - [Docker](https://www.docker.com/)

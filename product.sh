@@ -1,5 +1,8 @@
 #!/bin/zsh -l
 
+# This file demonstrates how to use `./run_something.sh &` to manage parallel jobs. See also run_prod.sh with openmp
+
+
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=60

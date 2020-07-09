@@ -1,6 +1,6 @@
 #!/bin/zsh -l
 
-# this is a complicated example, to show its flexibility in configurations
+# this is a complicated example, to show its flexibility in configurations. openmp is used for parallel computing
 
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
