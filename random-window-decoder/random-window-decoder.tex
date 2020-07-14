@@ -1,0 +1,123 @@
+\def\rank{\mathop{\rm rank}}
+\def\wgt{\mathop{\rm wgt}}
+\def\lc{\mathop{\rm lc}}
+\def\ker{\mathop{\rm Ker}}
+\def\im{\mathop{\rm Im}}
+\documentclass[aps,%prb,12pt,tightenlines,%
+pra, twocolumn,%superscriptaddress,%
+%galley,
+notitlepage,longbibliography]{revtex4-2}
+%\advance\textheight by -5.2in
+%\advance\textheight by -2.25in
+\usepackage{hyperref}
+\usepackage{amsmath}
+%\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{array}
+%\usepackage{enumitem}
+%\usepackage{datetime}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\begin{document}
+\title{On random window algorithm}
+\date\today
+\date{\today\ \bf \jobname} 
+%\date{\today\ \currenttime\ \bf \jobname} 
+\author{Weilei Zeng}
+\affiliation{Department of Physics \& Astronomy, University of California,
+  Riverside, California 92521, USA}
+\email{wzeng002@ucr.edu}
+
+\begin{abstract}
+  note on random window decoder  
+\end{abstract}
+\maketitle
+
+\tableofcontents
+
+
+\section{introduction}
+The random window algorithm can be used to quickly estimate an upper
+bound of the distance of an error correcting code. In most cases, the
+upper bound matches its actual distance. It was invented and named information
+set algorithm in \cite{prange1962use, chua1988cellular} and explained
+as covering set
+algorithm in \cite{dumer2017distance}.
+
+Because a decoder return the closest codeword upon given input, it can
+also be used to esitimate the distance.
+
+
+\section{distance of a binary CSS code}
+
+input: stabilizer generator $G_X$, $G_Z$ with $G_XG_Z^T=0$
+
+solve for codeword generating matrix $C_Z$ such that $G_XC_Z^T=0$,
+$\rank(G_X) +\rank(G_Z) + \rank(C_Z) =0$ and $C_Z$ is independet from
+$G_Z$. This is done by first solve for dual matrix $G_XQ_Z^T=0$, then
+use gaussian ellemination to remove the dependent rows in $Q_Z$.
+
+* do a gaussian elimination of $C_Z$ and pick the row with min weight.
+
+do a random column permutation on $C_Z$
+
+go back to step * and repeat certain amount of times, record the min
+weight, which is an upper bound of Z distance.
+
+do the same thing to get X distance.
+
+
+
+\section{estimate distance of a classical binary code}
+
+input: binary code $GH^T=0$ with codeword generating matrix $G$ and
+parity check matrix $H$
+
+* use gaussian elimination to transform $G$ into row reduce echelon form
+
+get min row weight and update to distance if smaller.
+
+do a column permutation ( or a row permutation ) and repeat * certain
+amount of time.
+
+return min distance as an upper bound of the distance.
+
+
+
+
+\section{decode a non-CSS quantum code}
+
+
+Gauge generator matrix $G=(G_X|G_Z)$, $\tilde{G}=(G_Z|G_X)$\\
+$\tilde{G}S^T=0 \longrightarrow \text{ stabilzier generator matrix: }  S=(S_X|S_Z)$\\
+input error: $\tilde{e}=(e_Z|e_X)$\\
+syndrome $ s^T=S\tilde{e}^T=$
+modified parity check matrix: $H=(S_X|S_Z|s)$\\
+solve for dual matrix: $HQ^T=0 \longrightarrow  Q=(Q_Z|Q_X|1)$
+last row of Q gives the error detected $\tilde{e'}=(e_Z|e_X)$ with an extra 1 in the end.\\
+Difference $\tilde{d}=\tilde{e}+\tilde{e'}$\\
+
+Check if $d$ is a codeword or trial cycle.
+
+$\tilde C  d^T = 0$ means it is trial
+
+$\tilde C  d^T \neq 0$ means it is a codeword
+
+add $\tilde{d}$ to $G$ as an extra row and check the rank of $G'$\\
+If not full rank: $\tilde{d} \subset \tilde{G} \longrightarrow $ good error\\ 
+If full rank:     $\tilde{d} \not\subset \tilde{G} \longrightarrow $ bad error\\ 
+
+
+
+
+
+\bibliography{WeileiBibFile}
+%\bibliography{lpp,qc_all,more_qc,ldpc,linalg,percol,sg}
+\end{document}

@@ -1,0 +1,10 @@
+\contentsline {title}{On random window algorithm}{1}{section*.2}
+\contentsline {abstract}{Abstract}{1}{section*.1}
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.3}
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}introduction}{1}{section*.4}
+\contentsline {section}{\numberline {II}distance of a binary CSS code}{1}{section*.5}
+\contentsline {section}{\numberline {III}estimate distance of a classical binary code}{1}{section*.6}
+\contentsline {section}{\numberline {IV}decode a non-CSS quantum code}{1}{section*.7}
+\contentsline {section}{\numberline {}References}{1}{section*.8}
